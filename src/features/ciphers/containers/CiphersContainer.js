@@ -11,7 +11,7 @@ export default class CiphersContainer extends Component{
     render(){
         return(
             <View style={styles.viewStyle}>
-                <Text style={{fontFamily:'sf-regular'}}>Ciphers Container</Text>
+                <Text style={{fontFamily:'sf-regular', fontSize:20}}>Ciphers Container</Text>
             </View>
         )
     }

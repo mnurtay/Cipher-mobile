@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 
-import CiphersContainer from '../features/ciphers/containers/CiphersContainer'
+import NewsContainer from '../features/news/containers/NewsContainer'
 
-let CipherStack = createStackNavigator(
+let NewsStack = createStackNavigator(
     {
-        Ciphers: {
-            screen: CiphersContainer
+        News: {
+            screen: NewsContainer
         },
     },
     {
-        initialRouteName: 'Ciphers',
+        initialRouteName: 'News',
         defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#30156E'
@@ -25,4 +25,4 @@ let CipherStack = createStackNavigator(
     }
 )
 
-export default createAppContainer(CipherStack)
+export default createAppContainer(NewsStack)

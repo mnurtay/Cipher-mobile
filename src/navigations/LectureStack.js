@@ -13,12 +13,13 @@ let LectureStack = createStackNavigator(
         initialRouteName: 'Lectures',
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#454456'
+                backgroundColor: '#30156E'
             },
             headerTintColor: 'white',
             headerTitleStyle: {
-                fontFamily: 'sf-medium',
-                fontSize: 22
+                fontFamily: 'sf-regular',
+                fontSize: 22,
+                letterSpacing: 0.5
             }
         }
     }
