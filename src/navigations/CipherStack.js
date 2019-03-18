@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 
 import CiphersContainer from '../features/ciphers/containers/CiphersContainer'
+import { MAIN_COLOR_3 } from '../utils/constants'
 
 let CipherStack = createStackNavigator(
     {
@@ -13,7 +14,7 @@ let CipherStack = createStackNavigator(
         initialRouteName: 'Ciphers',
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#30156E'
+                backgroundColor: MAIN_COLOR_3
             },
             headerTintColor: 'white',
             headerTitleStyle: {

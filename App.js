@@ -1,8 +1,18 @@
 import React from 'react';
 import {Font} from 'expo';
-import { Text, View, StyleSheet } from 'react-native';
+
+// COMPONENTS
 import Holder from './src/components/general/HolderComponent'
 import Router from './src/navigations'
+
+// REDUX
+import Reducers from './src/reducers'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
+
+const middlewares = applyMiddleware(thunk)
+const store = createStore(Reducers, middlewares)
 
 export default class App extends React.Component {
   constructor(props){
@@ -20,17 +30,11 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <Holder isLoading={!this.state.fontloaded}>
-        <Router />
-      </Holder>
+      <Provider store={store}>
+        <Holder isLoading={!this.state.fontloaded}>
+          <Router />
+        </Holder>
+      </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  viewStyle: {
-    flex:1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})

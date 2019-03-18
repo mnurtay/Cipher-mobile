@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons'
 import NewsStack from './NewsStack'
 import LectureStack from './LectureStack'
 import CipherStack from './CipherStack'
+import { MAIN_COLOR_2 } from '../utils/constants'
 
 const AppBottomBar = createBottomTabNavigator(
     {
@@ -29,7 +30,7 @@ const AppBottomBar = createBottomTabNavigator(
             }
         }),
         tabBarOptions: {
-            activeTintColor: '#3752C6',
+            activeTintColor: MAIN_COLOR_2,
             inactiveTintColor: '#bbbbbb',
             showLabel: false,
             style: {

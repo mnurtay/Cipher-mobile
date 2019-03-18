@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 
 import NewsContainer from '../features/news/containers/NewsContainer'
+import { MAIN_COLOR_3 } from '../utils/constants'
 
 let NewsStack = createStackNavigator(
     {
@@ -13,7 +14,7 @@ let NewsStack = createStackNavigator(
         initialRouteName: 'News',
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#30156E'
+                backgroundColor: MAIN_COLOR_3
             },
             headerTintColor: 'white',
             headerTitleStyle: {
