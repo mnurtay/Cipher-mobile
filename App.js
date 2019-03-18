@@ -2,6 +2,7 @@ import React from 'react';
 import {Font} from 'expo';
 import { Text, View, StyleSheet } from 'react-native';
 import Holder from './src/components/general/HolderComponent'
+import Router from './src/navigations'
 
 export default class App extends React.Component {
   constructor(props){
@@ -20,9 +21,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Holder isLoading={!this.state.fontloaded}>
-        <View style={styles.viewStyle}>
-          <Text style={{fontFamily:'sf-regular'}}>Open up App.js to start working on your app!</Text>
-        </View>
+        <Router />
       </Holder>
     );
   }
