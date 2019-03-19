@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 
 import LecturesContainer from '../features/lectures/containers/LecturesContainer'
+import LectureDetailContainer from '../features/lectures/containers/LectureDetailContainer'
 import { MAIN_COLOR_3 } from '../utils/constants'
 
 let LectureStack = createStackNavigator(
@@ -9,6 +10,9 @@ let LectureStack = createStackNavigator(
         Lectures: {
             screen: LecturesContainer
         },
+        LectureDetail: {
+            screen: LectureDetailContainer
+        }
     },
     {
         initialRouteName: 'Lectures',

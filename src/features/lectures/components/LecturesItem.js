@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, Dimensions } from 'react-native'
 import { Image } from 'react-native-elements'
 import { MAIN_GRAY } from '../../../utils/constants'
+import ImageHolder from '../../../components/general/ImageHolder'
 
 const h = Dimensions.get('window').height;
 const w = Dimensions.get('window').width;
@@ -10,19 +11,24 @@ export default class LectureItem extends Component{
     constructor(props){
         super(props)
     }
+
+    _onPress = () => {
+        let {id} = this.props.data
+        this.props.navigation.navigate('LectureDetail', {lectureId: id})
+    }
+
     render(){
         let {data} = this.props
         return(
-            <TouchableOpacity style={styles.container}>
+            <TouchableOpacity style={styles.container} activeOpacity={.7} onPress={()=>this._onPress()}>
                 <View style={styles.imgView}>
-                    <Image
-                        source = {{ uri: data.picture }}
-                        style = {{ width:w*.18, height:h*.2, borderRadius:10 }}
-                        resizeMode = {'center'}
+                    <ImageHolder
+                        url = {data.picture}
+                        ratio = {0.85}
                     />
                 </View>
-                <View style={{ marginTop:3, width:250 }}>
-                    <Text style={styles.titleStyle} ellipsizeMode={'tail'} numberOfLines={1}>{data.name}</Text>
+                <View style={styles.titleView}>
+                    <Text style={styles.titleStyle}>{data.name}</Text>
                 </View>
             </TouchableOpacity>
         )
@@ -31,25 +37,23 @@ export default class LectureItem extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
         backgroundColor: 'white',
         padding: 10,
         borderRadius: 10,
-        borderWidth: .5,
+        borderWidth: 1,
         borderColor: MAIN_GRAY,
+        marginTop: 15,
     },
     imgView: {
-        width: w*0.2,
-        height: h*.1,
-        borderWidth: 1,
-        borderRadius: 12,
-        borderColor: MAIN_GRAY,
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight: 15
     },
     titleStyle: {
         fontFamily: 'sf-regular',
-        fontSize: 20
+        fontSize: 19
+    },
+    titleView: {
+        marginTop: 5,
+        marginLeft: 5
     }
 })

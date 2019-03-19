@@ -22,7 +22,11 @@ class LecturesContainer extends Component{
 
     render(){
         let { lectures, isError, lecturesLoading } = this.props.LecturesReducers
-        let output = (<LecturesComponent data={lectures} navigation={this.props.navigation}/>)
+        let output = (<LecturesComponent
+                        data={lectures}
+                        navigation={this.props.navigation}
+                        _refresh={this._refresh}
+                    />)
         if(!lecturesLoading && lectures.length===0)
             output = <NotFoundComponent/>
         if(isError)
