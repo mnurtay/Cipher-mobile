@@ -1,29 +1,48 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, ScrollView, Dimensions } from 'react-native';
-import HTML from 'react-native-render-html';
+import LecturesComponent from '../components/LecturesComponent'
+import {connect} from 'react-redux'
+import {onLectureFetching} from '../actions/LecturesActions'
+import NotFoundComponent from '../../../components/status/NotFoundComponent'
+import ErrorComponent from '../../../components/status/ErrorComponent'
 
-const ht = `<h3>The AES Symmetric-Key Cipher</h3>`;
-
-export default class LecturesContainer extends Component{
+class LecturesContainer extends Component{
     static navigationOptions = ({ navigation }) => {
         return{
             title: 'Lectures',
         }
     }
 
+    componentDidMount(){
+        this._refresh()
+    }
+
+    _refresh = () => {
+        this.props._on_lectures_fetching()
+    }
+
     render(){
-        return(
-            <ScrollView style={{flex:1, paddingHorizontal:10}}>
-                <HTML html={ht} imagesMaxWidth={Dimensions.get('window').width}/>
-            </ScrollView>
-        )
+        let { lectures, isError, lecturesLoading } = this.props.LecturesReducers
+        let output = (<LecturesComponent data={lectures} navigation={this.props.navigation}/>)
+        if(!lecturesLoading && lectures.length===0)
+            output = <NotFoundComponent/>
+        if(isError)
+            output = <ErrorComponent/>
+        return output
     }
 }
 
-const styles = StyleSheet.create({
-    viewStyle: {
-      flex:1,
-      alignItems: 'center',
-      justifyContent: 'center'
+const mapStateToProps = state => {
+    return {
+        LecturesReducers: state.LecturesReducers
     }
-})
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        _on_lectures_fetching: async() => {
+            await dispatch(await onLectureFetching())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LecturesContainer)

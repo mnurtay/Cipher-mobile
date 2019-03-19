@@ -15,7 +15,7 @@ export default function LecturesReducers(state=initialState, action){
             })
         }
         case types.LECTURES_FULFILLED: {
-            return Object.assign({}, state, {
+            return Object.assign({}, state, action.payload, {
                 lecturesLoading: false
             })
         }
