@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     scrollView: {
         flex: 1,
         paddingHorizontal: 10,
+        paddingBottom: 10,
         backgroundColor: MAIN_BACKGROUND
     }
 })

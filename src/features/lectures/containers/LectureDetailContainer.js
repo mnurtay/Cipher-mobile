@@ -4,6 +4,8 @@ import {onLectureDetailFetching} from '../actions/LectureDetailActions'
 import LectureDetailComponent from '../components/LectureDetailComponent'
 import NotFoundComponent from '../../../components/status/NotFoundComponent'
 import ErrorComponent from '../../../components/status/ErrorComponent'
+import { ActivityIndicator, View } from 'react-native'
+import {MAIN_COLOR_3} from '../../../utils/constants'
 
 class LectureDetailContainer extends Component{
     static navigationOptions = ({ navigation }) => {
@@ -32,6 +34,12 @@ class LectureDetailContainer extends Component{
             output = <NotFoundComponent/>
         if(isError)
             output = <ErrorComponent/>
+        if(lectureLoading)
+            output = (
+                <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+                    <ActivityIndicator size={'large'} color={MAIN_COLOR_3}/>
+                </View>
+            )
         return output
     }
 }
