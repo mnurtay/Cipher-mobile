@@ -11,9 +11,7 @@ export default class CipherTypes extends Component {
     }
 
     goTo = (item) => {
-        if(item.name=='Symmetric algorithms'){
-            console.log("**********************************")
-        }
+        this.props.navigation.navigate("Cipher", {cipherType: item})
     }
 
     render(){

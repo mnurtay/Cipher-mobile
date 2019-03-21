@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, ActivityIndicator, StyleSheet } from 'react-native'
-import {MAIN_COLOR_3} from '../../utils/constants'
+import {MAIN_COLOR_3, MAIN_BACKGROUND} from '../../utils/constants'
 
 class Holder extends Component {
     render(){
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     innerHolder: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: MAIN_BACKGROUND
     }
 })
