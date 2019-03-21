@@ -12,7 +12,7 @@ const AppBottomBar = createBottomTabNavigator(
         CipherBar: CipherStack
     },
     {
-        initialRouteName: 'LectureBar',
+        initialRouteName: 'CipherBar',
         defaultNavigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, horizontal, tintColor }) => {
                 const { routeName } = navigation.state;

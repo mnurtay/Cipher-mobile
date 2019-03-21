@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 
-import CiphersContainer from '../features/ciphers/containers/CiphersContainer'
+import CiphersTypesContainer from '../features/ciphers/containers/CiphersTypesContainer'
 import { MAIN_COLOR_3 } from '../utils/constants'
 
 let CipherStack = createStackNavigator(
     {
         Ciphers: {
-            screen: CiphersContainer
+            screen: CiphersTypesContainer
         },
     },
     {

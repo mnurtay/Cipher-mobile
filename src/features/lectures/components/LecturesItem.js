@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, Dimensions } from 'react-native'
-import { Image } from 'react-native-elements'
 import { MAIN_GRAY } from '../../../utils/constants'
 import ImageHolder from '../../../components/general/ImageHolder'
 
@@ -42,7 +41,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         borderColor: MAIN_GRAY,
-        marginTop: 15,
+        marginBottom: 20
     },
     imgView: {
         alignItems: 'center',

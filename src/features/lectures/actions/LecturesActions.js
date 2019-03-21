@@ -3,7 +3,6 @@ import {HOST_LIST} from '../../../utils/constants'
 
 import Axios from 'axios'
 
-// ************ FETCHING LECTURES ************ //
 function onLecturesFetchingPending(){
     return {
         type: types.LECTURES_PENDING,

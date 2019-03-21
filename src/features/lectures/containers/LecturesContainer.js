@@ -4,13 +4,13 @@ import {connect} from 'react-redux'
 import {onLectureFetching} from '../actions/LecturesActions'
 import NotFoundComponent from '../../../components/status/NotFoundComponent'
 import ErrorComponent from '../../../components/status/ErrorComponent'
-import { ActivityIndicator, View } from 'react-native'
-import {MAIN_COLOR_3} from '../../../utils/constants'
+import Holder from '../../../components/general/HolderComponent'
 
 class LecturesContainer extends Component{
-    static navigationOptions = ({ navigation }) => {
-        return{
-            title: 'Lectures',
+    static navigationOptions = {
+        title: 'Lectures',
+        headerTitleStyle: {
+            fontFamily: 'sf-medium'
         }
     }
 
@@ -33,13 +33,11 @@ class LecturesContainer extends Component{
             output = <NotFoundComponent/>
         if(isError)
             output = <ErrorComponent/>
-        if(lecturesLoading)
-            output = (
-                <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-                    <ActivityIndicator size={'large'} color={MAIN_COLOR_3}/>
-                </View>
-            )
-        return output
+        return(
+            <Holder isLoading={lecturesLoading}>
+                {output}
+            </Holder>
+        )
     }
 }
 

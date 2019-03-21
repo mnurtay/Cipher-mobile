@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, ActivityIndicator, StyleSheet } from 'react-native'
+import {MAIN_COLOR_3} from '../../utils/constants'
 
 class Holder extends Component {
     render(){
@@ -8,7 +9,7 @@ class Holder extends Component {
                 {
                     this.props.isLoading
                     ? <View style={styles.innerHolder}>
-                        <ActivityIndicator size='large' />
+                        <ActivityIndicator size='large' color={MAIN_COLOR_3}/>
                     </View>
                     : this.props.children
                 }

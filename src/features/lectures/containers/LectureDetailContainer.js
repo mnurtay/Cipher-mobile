@@ -6,11 +6,13 @@ import NotFoundComponent from '../../../components/status/NotFoundComponent'
 import ErrorComponent from '../../../components/status/ErrorComponent'
 import { ActivityIndicator, View } from 'react-native'
 import {MAIN_COLOR_3} from '../../../utils/constants'
+import Holder from '../../../components/general/HolderComponent'
 
 class LectureDetailContainer extends Component{
-    static navigationOptions = ({ navigation }) => {
-        return{
-            title: 'Detail Lecture',
+    static navigationOptions = {
+        headerTitle: 'Detail Lecture',
+        headerTitleStyle: {
+            fontFamily: 'sf-medium'
         }
     }
 
@@ -34,13 +36,11 @@ class LectureDetailContainer extends Component{
             output = <NotFoundComponent/>
         if(isError)
             output = <ErrorComponent/>
-        if(lectureLoading)
-            output = (
-                <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-                    <ActivityIndicator size={'large'} color={MAIN_COLOR_3}/>
-                </View>
-            )
-        return output
+        return(
+            <Holder isLoading={lectureLoading}>
+                {output}
+            </Holder>
+        )
     }
 }
 
