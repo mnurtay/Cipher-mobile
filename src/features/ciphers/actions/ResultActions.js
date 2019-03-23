@@ -25,15 +25,17 @@ export async function onResultFetching(to, obj){
         result_obj = {
             result: [],
             isLoading: false,
-            isError: false
+            isError: false,
+            status: 200
         }
         try{
-            let result = await Axios.get(URL, obj)
+            let result = await Axios.post(URL, obj)
             //console.log('ACTION_LECTURES_SUCCESS', result.data)
             result_obj.result = result.data
         } catch(error){
             //console.log('ACTION_LECTURES_ERROR', error)
             result_obj.isError = true
+            result_obj.status = error.response.status
         }
         dispatch(onResultFetchingFulfilled(result_obj))
     }

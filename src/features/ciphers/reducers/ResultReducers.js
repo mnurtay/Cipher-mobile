@@ -3,7 +3,8 @@ import * as types from '../../../utils/types'
 let initialState = {
     result: [],
     isLoading: false,
-    isError: false
+    isError: false,
+    status: 200
 }
 
 export default function ResultReducers(state=initialState, action){
