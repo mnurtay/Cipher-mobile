@@ -24,7 +24,7 @@ export default class LectureDetailComponent extends Component{
                             borderWidth: 0.5,
                             borderColor: MAIN_COLOR_3,
                             borderRadius: 10,
-                            height: 30
+                            paddingHorizontal: 10
                         }}
                         containerStyle={{ borderRadius: 10 }}
                         onPress={() => Linking.openURL(data.video)}

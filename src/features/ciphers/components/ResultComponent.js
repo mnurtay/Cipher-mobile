@@ -59,15 +59,17 @@ export default class ResultComponent extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 20
+        marginTop: 20,
+        alignItems: 'center'
     },
     title: {
         fontFamily: 'sf-medium',
         fontSize: 20,
-        marginLeft: 5
+        marginLeft: 5,
+        width: w*.95
     },
     block: {
-        width: w,
+        width: w*.95,
         borderWidth: 1,
         borderColor: MAIN_GRAY,
         borderRadius: 10,

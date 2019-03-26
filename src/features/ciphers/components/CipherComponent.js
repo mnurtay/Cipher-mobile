@@ -71,7 +71,7 @@ class CipherComponent extends Component{
         btnColor = isLoading ? 'gold' : 'green'
         return(
             <ScrollView style={styles.container}>
-                <View style={{marginTop:15, marginBottom:20}}>
+                <View style={{marginTop:15, marginBottom:20, alignItems:'center'}}>
                     <Text style={styles.title}>Cipher the text</Text>
                     <View style={styles.cipher}>
                         {/* --- Choosing algorithm --- */}
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
         backgroundColor: MAIN_BACKGROUND
     },
     cipher: {
-        width: w,
+        width: w*.95,
         borderWidth: 1,
         borderColor: MAIN_GRAY,
         borderRadius: 10,
@@ -164,7 +164,8 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: 'sf-medium',
         fontSize: 20,
-        marginLeft: 5
+        marginLeft: 5,
+        width: w*.95
     },
     block: {
         marginTop:2,

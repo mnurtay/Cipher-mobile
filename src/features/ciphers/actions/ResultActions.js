@@ -33,7 +33,7 @@ export async function onResultFetching(to, obj){
             //console.log('ACTION_LECTURES_SUCCESS', result.data)
             result_obj.result = result.data
         } catch(error){
-            //console.log('ACTION_LECTURES_ERROR', error)
+            console.log('ACTION_LECTURES_ERROR', error)
             result_obj.isError = true
             result_obj.status = error.response.status
         }
