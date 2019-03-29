@@ -10,9 +10,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/Frame2.png",
+    "icon": "./assets/iconIOS.jpg",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/iconIOS.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,7 +24,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.cypher.kz"
+      "bundleIdentifier": "com.cypherIOS.kz"
     },
     "android": {
       "package": "com.cypher.kz"
